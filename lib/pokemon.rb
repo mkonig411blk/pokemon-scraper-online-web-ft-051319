@@ -19,7 +19,7 @@ class Pokemon
     name = pokemon[0][1]
     type = pokemon[0][2]
     db = pokemon[0][3]
-    new_pokemon = self.new(id, name, type)
+    new_pokemon = self.new(id, name, type, db)
     return new_pokemon
   end
 end
