@@ -1,6 +1,1 @@
- CREATE TABLE pokemon (
-        id INTEGER PRIMARY KEY, 
-        name TEXT, 
-        type TEXT,
-        hp INTEGER
-        );
+UPDATE pokemon SET hp = [new value] WHERE [column name] = [value];
