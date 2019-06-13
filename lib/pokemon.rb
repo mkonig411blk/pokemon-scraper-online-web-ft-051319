@@ -1,8 +1,8 @@
 class Pokemon
-  attr_accessor :name, :type, :db 
+  attr_accessor :name, :type, :db, :hp
   attr_reader :id
   
-  def initialize(id:, name:, type:, db:)
+  def initialize(id:, name:, type:, db:, hp:)
     @id = id
     @name = name
     @type = type
@@ -10,15 +10,15 @@ class Pokemon
   end
   
   def self.save(name, type, db)
-    db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)",name, type)
+    db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)",name,type)
   end
   
   def self.find(num, db)
-    pokemon = db.execute("SELECT * FROM pokemon WHERE id=?", [num])
+    pokemon = db.execute("SELECT * FROM pokemon WHERE id = ?", [num])
     id = pokemon[0][0]
     name = pokemon[0][1]
     type = pokemon[0][2]
-    new_pokemon = self.new(id: id, name: name, type: type, db: db)
+    new_pokemon = self.new(id, name, type, db)
     return new_pokemon
   end
 end
