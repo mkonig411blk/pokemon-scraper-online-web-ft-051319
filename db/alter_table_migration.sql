@@ -1,1 +1,2 @@
-UPDATE pokemon SET hp = [new value] WHERE [column name] = [value];
+ALTER TABLE pokemon
+  ADD hp INTEGER;
