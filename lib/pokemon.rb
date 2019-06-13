@@ -8,8 +8,8 @@ class Pokemon
     @type = type
     @db = db
     if @hp = nil
-    @hp = hp
-  else @hp = 60 
+    @hp = 60
+  else @hp = hp
   end
   end
   
